@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.mwp.boot.demo</groupId>
+    <artifactId>demo-api</artifactId>
+    <version>1.0.0-SNAPSHOT</version>
+    <properties>
+        <base-project.version>1.18.1130.1</base-project.version>
+        <maven.build.timestamp.format>yyyy-MM-dd-HHmmss</maven.build.timestamp.format>
+        <java.version>1.8</java.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <guave.version>20.0</guave.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.18.4</version>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.4</version>
+                <configuration>
+                    <attach>true</attach>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>${java.version}</source>
+                    <target>${java.version}</target>
+                    <encoding>${project.build.sourceEncoding}</encoding>
+                    <showWarnings>false</showWarnings>
+                    <showDeprecation>false</showDeprecation>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>deploy</id>
+            <!-- 本地windows和mac开发使用的版本号 -->
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <project.version>${base-project.version}.local-SNAPSHOT</project.version>
+            </properties>
+        </profile>
+
+        <!-- online使用的版本号 -->
+        <profile>
+            <id>online</id>
+            <properties>
+                <project.version>${base-project.version}</project.version>
+            </properties>
+        </profile>
+    </profiles>
+    <distributionManagement>
+        <repository>
+            <id>repo</id>
+            <!--<name>Netease Maven Repository</name>-->
+            <!--<url>http://mvn.hz.netease.com/artifactory/libs-releases</url>-->
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <!--<name>Netease Maven Repository</name>-->
+            <!--<url>http://mvn.hz.netease.com/artifactory/libs-snapshots</url>-->
+        </snapshotRepository>
+    </distributionManagement>
+
+</project>
