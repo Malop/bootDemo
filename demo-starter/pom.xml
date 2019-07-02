@@ -144,7 +144,7 @@
                 </dependencies>
             </plugin>
         </plugins>
-<!--
+<!-- 不需要指定文件
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -154,6 +154,5 @@
                 </includes>
             </resource>
         </resources>-->
-
     </build>
 </project>
