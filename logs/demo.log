@@ -1,6 +1,0 @@
-2019-06-27 11:06:13,896 - demo - com.mwp.demo.DemoApplication - INFO [main]  [StartupInfoLogger:logStarting] - Starting DemoApplication on maoweipengdeMacBook-Air.local with PID 11514 (/Users/maoweipeng/git_repository/bootDemo/demo-starter/target/classes started by maoweipeng in /Users/maoweipeng/git_repository/bootDemo)
-2019-06-27 11:06:13,900 - demo - com.mwp.demo.DemoApplication - INFO [main]  [SpringApplication:logStartupProfileInfo] - No active profile set, falling back to default profiles: default
-2019-06-27 11:06:17,416 - demo - com.mwp.demo.DemoApplication - INFO [main]  [StartupInfoLogger:logStarted] - Started DemoApplication in 4.378 seconds (JVM running for 5.978)
-2019-06-27 11:07:22,844 - demo - com.mwp.demo.DemoApplication - INFO [main]  [StartupInfoLogger:logStarting] - Starting DemoApplication on maoweipengdeMacBook-Air.local with PID 11521 (/Users/maoweipeng/git_repository/bootDemo/demo-starter/target/classes started by maoweipeng in /Users/maoweipeng/git_repository/bootDemo)
-2019-06-27 11:07:22,857 - demo - com.mwp.demo.DemoApplication - INFO [main]  [SpringApplication:logStartupProfileInfo] - No active profile set, falling back to default profiles: default
-2019-06-27 11:07:26,261 - demo - com.mwp.demo.DemoApplication - INFO [main]  [StartupInfoLogger:logStarted] - Started DemoApplication in 4.274 seconds (JVM running for 5.567)
