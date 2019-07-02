@@ -144,7 +144,7 @@
                 </dependencies>
             </plugin>
         </plugins>
-
+<!--
         <resources>
             <resource>
                 <directory>src/main/resources</directory>
@@ -153,7 +153,7 @@
                     <include>**/*.xml</include>
                 </includes>
             </resource>
-        </resources>
+        </resources>-->
 
     </build>
 </project>

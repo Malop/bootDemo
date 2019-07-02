@@ -3,6 +3,7 @@
 
 # Log file
 *.log
+*.log.*
 
 # BlueJ files
 *.ctxt
@@ -26,12 +27,9 @@ hs_err_pid*
 .idea/
 /.idea/
 *.idea
+*.iml
 
 #MacOS Files
 .DS_Store
 *.DS_Store
-demo-api/target/generated-sources/
-demo-common/target/classes/
-demo-dao/target/generated-sources/
-demo-service/target/generated-sources/
-demo-starter/target/generated-sources/
+*/target/
