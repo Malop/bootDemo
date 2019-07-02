@@ -17,6 +17,7 @@ public class demoApi {
         list.add("five");
         list.add("six");
 
+        //使用jdk1.8的stream过滤指定字符串
         Stream<String> stream = list.stream();
         Stream<String> stringStream = stream.filter((String s)-> "three".equals(s));
         System.out.println(stringStream.toArray()[0]);
