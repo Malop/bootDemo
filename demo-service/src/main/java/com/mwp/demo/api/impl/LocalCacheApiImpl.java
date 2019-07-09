@@ -8,6 +8,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.Timer;
 
+//注意这里的service注解用的是spring的注解，而不是com.alibaba.dubbo.config.annotation.Service;
 @Service("localCacheApi")
 public class LocalCacheApiImpl implements LocalCacheApi {
 
