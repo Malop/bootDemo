@@ -9,5 +9,6 @@
 
     <dubbo:consumer group="${dubbo.consumer.group}" version="1.0.0" cluster="failfast" check="false" timeout="5000" />
 
-    <dubbo:reference id="demoServiceConsumer" interface="com.mwp.demo.service.impl.DemoServiceImpl" filter="dubboLogFilter"/>
+    <dubbo:reference id="demoServiceConsumer" interface="com.mwp.demo.service.impl.DemoServiceImpl"
+                     filter="dubboLogFilter" retries="3" />
 </beans>

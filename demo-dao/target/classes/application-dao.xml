@@ -51,7 +51,8 @@
 		<property name="defaultAutoCommit">
 			<value>true</value>
 		</property>
-        <property name="timeBetweenLogStatsMillis" value="60000" />
+		<!--数据库监控日志打印间隔-->
+        <property name="timeBetweenLogStatsMillis" value="600000" />
 	</bean>
 
 	<bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">

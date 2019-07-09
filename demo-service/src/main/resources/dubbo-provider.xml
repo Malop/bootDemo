@@ -6,11 +6,20 @@
        http://www.springframework.org/schema/beans/spring-beans.xsd
        http://dubbo.apache.org/schema/dubbo
        http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+<!-- 注册中心信息在properties文件中指定，boot会自动加载
+    &lt;!&ndash; 提供方应用信息，用于计算依赖关系 &ndash;&gt;
+    <dubbo:application name="${dubbo.application.name}"  />
 
-    <dubbo:provider group="${dubbo.provider.group}" version="1.0.0" timeout="5000"/>
+    &lt;!&ndash; 注册中心暴露服务地址 &ndash;&gt;
+    <dubbo:registry address="${dubbo.registry.address}" check="false" file="false"
+                    group="${dubbo.registry.group}"/>
+
+    &lt;!&ndash; 用dubbo协议在20881端口暴露服务 &ndash;&gt;
+    <dubbo:protocol name="dubbo" port="20881" />-->
+
     <!-- 声明需要暴露的服务接口 -->
-    <dubbo:service interface="com.mwp.demo.service.DemoService" ref="demoService" />
-
-    <!-- 和本地bean一样实现服务 -->
-    <bean id="demoService" class="com.mwp.demo.service.impl.DemoServiceImpl" />
+    <dubbo:service interface="com.mwp.demo.service.DemoService" ref="demoService"
+                   group="${dubbo.provider.group}" />
+    <dubbo:service interface="com.mwp.demo.api.MyCache.LocalCacheApi" ref="localCacheApi"
+                   group="${dubbo.provider.group}" />
 </beans>
