@@ -19,7 +19,7 @@
 
     <!-- 声明需要暴露的服务接口 -->
     <dubbo:service interface="com.mwp.demo.service.DemoService" ref="demoService"
-                   group="${dubbo.provider.group}" />
+                   group="${dubbo.provider.group}" version="1.0.0" />
     <dubbo:service interface="com.mwp.demo.api.MyCache.LocalCacheApi" ref="localCacheApi"
-                   group="${dubbo.provider.group}" />
+                   group="${dubbo.provider.group}" version="1.0.0" />
 </beans>

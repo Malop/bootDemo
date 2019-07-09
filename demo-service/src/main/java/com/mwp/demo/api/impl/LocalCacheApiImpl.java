@@ -4,11 +4,11 @@ import com.mwp.demo.cache.LRUMap;
 import com.mwp.demo.api.MyCache.LocalCacheApi;
 import com.mwp.demo.cache.LocalCacheCleanTask;
 import com.mwp.demo.cache.LocalCacheElement;
-import com.alibaba.dubbo.config.annotation.Service;
+import org.springframework.stereotype.Service;
 
 import java.util.Timer;
 
-@Service(interfaceName = "localCacheApi")
+@Service("localCacheApi")
 public class LocalCacheApiImpl implements LocalCacheApi {
 
     private static final Timer timer = new Timer();
