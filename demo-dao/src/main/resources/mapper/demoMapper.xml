@@ -16,4 +16,10 @@
         from user
         where user_name = #{userName}
     </select>
+
+    <insert id="insert" parameterType="java.lang.String" >
+        insert into user (user_id,user_name,password)
+        values (#{userName,jdbcType=VARCHAR},#{userName,jdbcType=VARCHAR},
+        #{password,jdbcType=VARCHAR})
+    </insert>
 </mapper>

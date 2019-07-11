@@ -1,15 +1,23 @@
 package com.mwp.demo.controller;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import com.mwp.demo.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import javax.servlet.http.HttpServletRequest;
 
 @Controller
 @RequestMapping("/demo")
 public class DemoController {
+
+    private static Logger logger = LoggerFactory.getLogger(DemoController.class);
 
     @Autowired
     private DemoService demoService;
@@ -75,4 +83,24 @@ public class DemoController {
         return "blank";
     }
 
+    @RequestMapping("/login4user")
+    public String login4user(){
+        return "login4user";
+    }
+
+    @RequestMapping(value = "/login4info",method = RequestMethod.POST)
+    @ResponseBody
+    public String login4info(HttpServletRequest request){
+        String userName = request.getParameter("userName");
+        String password = request.getParameter("password");
+
+        logger.info("获取到的用户信息为:userName="+userName+",password="+password);
+        demoService.insert(userName,password);
+        return "ok";
+    }
+
+    @RequestMapping(value = "/home",method = RequestMethod.GET)
+    public String home(){
+        return "home";
+    }
 }

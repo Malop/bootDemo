@@ -6,4 +6,6 @@ import org.springframework.stereotype.Component;
 @Component
 public interface DemoMapper {
     UserInfo selectByName(String userName);
+
+    void insert(String userName,String password);
 }

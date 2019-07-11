@@ -7,8 +7,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.ImportResource;
 
-//等价于使用@Configuration @EnableAutoConfiguration @ComponentScan三者
+//使用dubbo注解方式注册服务
 @EnableDubbo
+//等价于使用@Configuration @EnableAutoConfiguration @ComponentScan三者
 @SpringBootApplication(scanBasePackages = "com.mwp.demo")
 @ImportResource("classpath:applicationContext.xml")
 @MapperScan("com.mwp.demo.mapper")

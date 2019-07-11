@@ -21,4 +21,9 @@ public class DemoServiceImpl implements DemoService {
         UserInfo user = demoMapper.selectByName(name);
         return "Hello!" + user.getUserId()+"-"+user.getUserName();
     }
+
+    @Override
+    public void insert(String userName, String password) {
+        demoMapper.insert(userName,password);
+    }
 }
