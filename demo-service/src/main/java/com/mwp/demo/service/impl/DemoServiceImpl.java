@@ -19,7 +19,10 @@ public class DemoServiceImpl implements DemoService {
             name = "mwp";
         }
         UserInfo user = demoMapper.selectByName(name);
-        return "Hello!" + user.getUserId()+"-"+user.getUserName();
+        if(user == null){
+            return "there is no one in the db!";
+        }
+        return "Hello!" + user.getId()+"-"+user.getUserName();
     }
 
     @Override

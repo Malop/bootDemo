@@ -32,5 +32,9 @@
             <groupId>org.apache.curator</groupId>
             <artifactId>curator-framework</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.alipay.api</groupId>
+            <artifactId>alipay-sdk</artifactId>
+        </dependency>
     </dependencies>
 </project>
