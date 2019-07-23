@@ -72,11 +72,11 @@ public class AliPayController {
 
     @RequestMapping("/notify_url")
     public String notify_url(){
-        return "notify_url";
+        return "alipay/notify_url";
     }
 
     @RequestMapping("/return_url")
     public String return_url(){
-        return "return_url";
+        return "alipay/return_url";
     }
 }
