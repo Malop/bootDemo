@@ -1,17 +1,19 @@
 package com.mwp.demo.api;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Stream;
 
-public class demoApi {
+public class DemoApi {
 
     public static void main(String[] args){
+        System.out.println("the result is === "+checkStr("[(qweq])"));
         List<String> list = new ArrayList();
 
         list.add("one");
         list.add("two");
-        list.add("two");
+        //list.add("two");
         list.add("three");
         list.add("four");
         list.add("five");
@@ -34,7 +36,7 @@ public class demoApi {
                 System.out.println("----remove1 item is:"+a);
                 list.remove(a);
             }
-            if("four".equals(a)){
+            if("three".equals(a)){
                 System.out.println("----remove3 item is:"+a);
                 list.remove(a);
             }
@@ -42,5 +44,32 @@ public class demoApi {
         for(String s : list){
             System.out.println(s);
         }
+    }
+
+    public static int checkStr(String s){
+
+        int resultValue = 0; // 初始返回值
+        LinkedList<Byte> ll = new LinkedList(); // 用于存放括号的栈
+        byte[] bs = s.getBytes();
+        // 遍历String
+        for (byte b : bs) {
+            // 如果是左括号，存入栈
+            if (b == '(' || b == '[') {
+                ll.add(b);
+            } else if (b == ')') {
+                // 如果是‘）’，取栈中最后的括号，判断是否匹配
+                // 若不匹配，则返回1；
+                if (ll.getLast() != '(') {
+                    resultValue = 1;
+                    break;
+                }
+            } else if (b == ']') {
+                if (ll.getLast() != '[') {
+                    resultValue = 1;
+                    break;
+                }
+            }
+        }
+        return resultValue;
     }
 }

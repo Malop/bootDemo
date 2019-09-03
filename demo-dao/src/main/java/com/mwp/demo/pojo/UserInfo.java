@@ -9,5 +9,10 @@ public class UserInfo {
     private String userName;
     private String sex;
     private String password;
+    private Role role;
+
+    public enum Role{
+        admin,normal
+    }
 
 }

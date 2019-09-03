@@ -1,15 +1,14 @@
 package com.mwp.demo.controller;
 
+import com.mwp.demo.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import com.mwp.demo.service.DemoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.servlet.ModelAndView;
 
 import javax.servlet.http.HttpServletRequest;
 
@@ -20,7 +19,7 @@ public class DemoController {
     private static Logger logger = LoggerFactory.getLogger(DemoController.class);
 
     @Autowired
-    private DemoService demoService;
+    private UserService userService;
 
     @Value("${user.info}")
     private String userInfo;
@@ -34,7 +33,7 @@ public class DemoController {
     @RequestMapping("/getUserFromDB")
     @ResponseBody
     public String getUserInfo(String name){
-        String res = demoService.sayHelloToDemo(name);
+        String res = userService.sayHelloToDemo(name);
         return res;
     }
 
@@ -95,7 +94,7 @@ public class DemoController {
         String password = request.getParameter("password");
 
         logger.info("获取到的用户信息为:userName="+userName+",password="+password);
-        demoService.insert(userName,password);
+        userService.insert(userName,password);
         return "ok";
     }
 
